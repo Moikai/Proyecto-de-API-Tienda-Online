@@ -1,7 +1,15 @@
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #4338ca;
+  --color-secondary: #22c55e;
+  --color-background: #f9fafb;
+  --color-text: #111827;
+}
+
 #root {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0px;
   font-family:
     system-ui,
     -apple-system,
@@ -17,7 +25,8 @@ h1 {
 }
 
 p code {
-  background: #f3f3f3;
+  color: var(--color-text);
+  background: var(--color-background);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-family:
