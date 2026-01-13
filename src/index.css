@@ -9,7 +9,12 @@
   --color-surface: #f9fafb;
   --color-text: #111827;
   --color-muted: #6b7280;
-  --color-border: #e5e7eb;
+  --color-border: #8e8f92; /* ajustado para mejor contraste */
+  --header-background: var(--color-primary);
+  --input-bg: transparent;
+  --input-color: var(--color-text);
+  --count-color: var(--color-muted);
+  --description-bg: transparent;
 
   /* Spacing / UI */
   --radius: 8px;
@@ -41,10 +46,22 @@ a {
   border-radius: 4px;
 }
 
-/* Modo gris: solo cambia el fondo a un gris clarito */
+/* Modo gris: fondo ligeramente más oscuro */
 [data-theme="dark"] {
-  --color-background: #f3f4f6; /* gris clarito */
+  --color-background: #d1d5db; /* gris un poco más oscuro */
   --color-surface: #ffffff;
+  /* Ajustes para accesibilidad en modo gris */
+  --color-primary: #4338ca; /* primary oscuro para buen contraste */
+  --color-muted: #565b66; /* muted con mejor contraste sobre gris */
+
+  /* Comportamiento específico para modo gris */
+  --input-bg: #ffffff;
+  --input-color: #000000;
+  --count-color: #000000;
+  --description-bg: #ffffff;
+
+  /* Forzar que el header mantenga el color original (mismo que en claro) */
+  --header-background: #2563eb;
 }
 
 /* Transición suave al cambiar tema */

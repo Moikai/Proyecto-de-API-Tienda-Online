@@ -45,6 +45,9 @@
   color: var(--color-muted);
   line-height: 1.5;
   margin-bottom: 1rem;
+  background: var(--description-bg);
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
 .actions {
