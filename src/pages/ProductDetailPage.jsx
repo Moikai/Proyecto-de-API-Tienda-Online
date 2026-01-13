@@ -42,7 +42,6 @@ function ProductDetailPage() {
                         <p className={styles.description}>{product.description}</p>
 
                         <div className={styles.actions}>
-                            <button className={styles.btn}>Comprar</button>
                             <button className={styles.btnSecondary} onClick={() => navigate(-1)}>Volver</button>
                         </div>
                     </div>

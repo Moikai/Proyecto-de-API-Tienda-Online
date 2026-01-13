@@ -9,13 +9,12 @@ function App() {
   return (
     <main>
       <Header />
-      <h1>"Proyecto de APIs"</h1>
       <Routes>
         <Route path="/" element={<ProductPage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
       </Routes>
     </main>
   );
-}
+} 
 
 export default App;
