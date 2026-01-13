@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import styles from './ProductDetailPage.module.css';
 
 
 function ProductDetailPage() {
@@ -25,22 +26,28 @@ function ProductDetailPage() {
     }, [id]);
 
     if (loading) return <p>Cargando producto...</p>;
+    if (error) return <p className={styles.error}>{error}</p>;
 
     return (
-        <div>
-            {loading && <p>Cargando producto...</p>}
-            {error && <p>{error}</p>}
-
+        <div className={styles.page}>
             {!loading && !error && product && (
-                <>
-                    <h1>{product.title}</h1>
-                    <img src={product.image} width={200} />
-                    <p>{product.description}</p>
-                    <p>${product.price}</p>
-                </>
+                <div className={styles.grid}>
+                    <div className={styles.imageWrapper}>
+                        <img src={product.image} alt={product.title} className={styles.image} />
+                    </div>
+
+                    <div className={styles.info}>
+                        <h1 className={styles.title}>{product.title}</h1>
+                        <p className={styles.price}>${product.price}</p>
+                        <p className={styles.description}>{product.description}</p>
+
+                        <div className={styles.actions}>
+                            <button className={styles.btn}>Comprar</button>
+                            <button className={styles.btnSecondary} onClick={() => navigate(-1)}>Volver</button>
+                        </div>
+                    </div>
+                </div>
             )}
-            {/* El botón SIEMPRE se renderiza */}
-            <button onClick={() => navigate(-1)}>Volver</button>
         </div>
     );
 }
