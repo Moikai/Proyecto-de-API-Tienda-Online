@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProductList from '../components/ProductList';
+import styles from './ProductPage.module.css';
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]); // 1. Estado para productos
@@ -35,17 +36,36 @@ export default function ProductPage() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Productos</h1>
-      <div></div>
-      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-      <select onChange={e => setSelectedCategory(e.target.value)}>
-        <option value="">Todas</option>
-        <option value="electronics">Electrónica</option>
-        <option value="jewelery">Joyas</option>
-        <option value="men's clothing">Ropa de Hombres</option>
-        <option value="women's clothing">Ropa deMujeres</option>
-      </select>
+    <div className={styles.page}>
+      <div className={styles.header}>
+        <h1>Productos</h1>
+        <div className={styles.controls}>
+          <input
+            className={styles.input}
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Buscar productos..."
+            aria-label="Buscar productos"
+          />
+
+          <select
+            className={styles.select}
+            onChange={e => setSelectedCategory(e.target.value)}
+            aria-label="Filtro por categoría"
+            value={selectedCategory}
+          >
+            <option value="">Todas</option>
+            <option value="electronics">Electrónica</option>
+            <option value="jewelery">Joyas</option>
+            <option value="men's clothing">Ropa de Hombres</option>
+            <option value="women's clothing">Ropa de Mujeres</option>
+          </select>
+
+          <span className={styles.count}>{filteredProducts.length} resultados</span>
+        </div>
+      </div>
+
       <ProductList productsToShow={filteredProducts} />
     </div>
 
