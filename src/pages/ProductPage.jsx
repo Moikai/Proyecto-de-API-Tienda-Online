@@ -62,7 +62,7 @@ export default function ProductPage() {
             <option value="women's clothing">Ropa de Mujeres</option>
           </select>
 
-          <span className={styles.count}>{filteredProducts.length} resultados</span>
+          <span className={styles.count} role="status" aria-live="polite">{filteredProducts.length} resultados</span>
         </div>
       </div>
 

@@ -71,6 +71,12 @@
   cursor: pointer;
 }
 
+.btn:focus-visible,
+.btnSecondary:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .error {
   color: #b91c1c;
 }

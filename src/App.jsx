@@ -15,6 +15,6 @@ function App() {
       </Routes>
     </main>
   );
-} 
+}
 
 export default App;

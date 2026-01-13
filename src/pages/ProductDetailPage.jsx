@@ -33,16 +33,22 @@ function ProductDetailPage() {
             {!loading && !error && product && (
                 <div className={styles.grid}>
                     <div className={styles.imageWrapper}>
-                        <img src={product.image} alt={product.title} className={styles.image} />
+                        <img
+                          src={product.image}
+                          alt={product.title || 'Imagen del producto'}
+                          className={styles.image}
+                          onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://via.placeholder.com/320x320?text=Imagen+no+disponible'; e.currentTarget.alt = 'Imagen no disponible'; }}
+                          aria-describedby="product-desc"
+                        />
                     </div>
 
                     <div className={styles.info}>
                         <h1 className={styles.title}>{product.title}</h1>
                         <p className={styles.price}>${product.price}</p>
-                        <p className={styles.description}>{product.description}</p>
+                        <p id="product-desc" className={styles.description}>{product.description || 'Sin descripción disponible'}</p>
 
                         <div className={styles.actions}>
-                            <button className={styles.btnSecondary} onClick={() => navigate(-1)}>Volver</button>
+                            <button className={styles.btnSecondary} onClick={() => navigate(-1)} aria-label="Volver a la lista de productos">Volver</button>
                         </div>
                     </div>
                 </div>
