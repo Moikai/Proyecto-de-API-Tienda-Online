@@ -10,8 +10,6 @@ function ProductDetailPage() {
     const navigate = useNavigate();
     const [error, setError] = useState(null);
 
-    const params = useParams
-    console.log(params); // Verificar que el ID se está leyendo correctamente
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${id}`)

@@ -1,27 +1,14 @@
 import { Link } from 'react-router-dom';
+import styles from './ProductList.module.css';
 
 export default function ProductList({ productsToShow }) {
   return (
-
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '1rem',
-      }}
-    >
+    <div className={styles.container}>
       {productsToShow.map((product) => (
-        <div
-          key={product.id}
-          style={{ border: '1px solid #ccc', padding: '1rem' }}
-        >
-          <img
-            src={product.image}
-            alt={product.title}
-            style={{ width: '100px' }}
-          />
+        <div key={product.id} className={styles.card}>
+          <img src={product.image} alt={product.title} />
           <h3>{product.title}</h3>
-          <p>${product.price}</p>
+          <p className={styles.price}> ${product.price}</p>
           <Link to={`/product/${product.id}`}> Ver detalle </Link>
         </div>
       ))}
