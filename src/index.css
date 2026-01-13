@@ -40,3 +40,14 @@ a {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* Modo gris: solo cambia el fondo a un gris clarito */
+[data-theme="dark"] {
+  --color-background: #f3f4f6; /* gris clarito */
+  --color-surface: #ffffff;
+}
+
+/* Transición suave al cambiar tema */
+body, #root {
+  transition: background-color 200ms linear, color 200ms linear;
+}
