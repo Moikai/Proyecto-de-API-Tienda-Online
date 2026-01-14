@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #2563eb;
+  --color-primary-dark: #4338ca;
+  --color-secondary: #22c55e;
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-border: #8e8f92; /* ajustado para mejor contraste */
+  --header-background: var(--color-primary);
+  --input-bg: transparent;
+  --input-color: var(--color-text);
+  --count-color: var(--color-muted);
+  --description-bg: transparent;
+
+  /* Spacing / UI */
+  --radius: 8px;
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
+  --shadow-md: 0 8px 24px rgba(16,24,40,0.08);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--color-text);
+  background: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Modo gris: fondo ligeramente más oscuro */
+[data-theme="dark"] {
+  --color-background: #d1d5db; /* gris un poco más oscuro */
+  --color-surface: #ffffff;
+  /* Ajustes para accesibilidad en modo gris */
+  --color-primary: #4338ca; /* primary oscuro para buen contraste */
+  --color-muted: #565b66; /* muted con mejor contraste sobre gris */
+
+  /* Comportamiento específico para modo gris */
+  --input-bg: #ffffff;
+  --input-color: #000000;
+  --count-color: #000000;
+  --description-bg: #ffffff;
+
+  /* Forzar que el header mantenga el color original (mismo que en claro) */
+  --header-background: #2563eb;
+}
+
+/* Transición suave al cambiar tema */
+body, #root {
+  transition: background-color 200ms linear, color 200ms linear;
+}
