@@ -34,11 +34,11 @@ function ProductDetailPage() {
                 <div className={styles.grid}>
                     <div className={styles.imageWrapper}>
                         <img
-                          src={product.image}
-                          alt={product.title || 'Imagen del producto'}
-                          className={styles.image}
-                          onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://via.placeholder.com/320x320?text=Imagen+no+disponible'; e.currentTarget.alt = 'Imagen no disponible'; }}
-                          aria-describedby="product-desc"
+                            src={product.image}
+                            alt={product.title || 'Imagen del producto'}
+                            className={styles.image}
+                            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://via.placeholder.com/320x320?text=Imagen+no+disponible'; e.currentTarget.alt = 'Imagen no disponible'; }}
+                            aria-describedby="product-desc"
                         />
                     </div>
 
