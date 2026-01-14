@@ -1,39 +1,52 @@
-# Preyecto de APIs
+Product Dashboard – React
 
-Comandos útiles:
+Frontend application built with React that consumes a public API to display a product catalog. The app includes filtering, search functionality, product detail views, and client-side routing, following modern frontend development practices.
 
-- `npm install` — instalar dependencias
-- `npm run dev` — iniciar servidor de desarrollo
-- `npm run build` — generar build de producción
-- `npm run lint` — ejecutar ESLint
-- `npm run format` — formatear con Prettier
+Tech Stack
 
-Estructura inicial sugerida:
+React
 
-- `src/components/` — componentes reutilizables
-- `src/pages/` — vistas / páginas principales
+JavaScript (ES6+)
 
+React Router
 
-# Product Dashboard – React
+Fetch API
 
-Aplicación web construida con React que consume una API pública para mostrar un catálogo de productos, con filtros, búsqueda y vista de detalle.
+CSS
 
-## Tecnologías
-- React
-- JavaScript
-- React Router
-- Fetch API
-- CSS
+ESLint & Prettier
 
-## Funcionalidades
-- Listado de productos
-- Filtro por categoría
-- Búsqueda por nombre
-- Vista detalle de producto
-- Manejo de estados (loading / error)
-- Navegación por rutas
+Key Features
 
-## Instalación y ejecución
-```bash
+Product listing from an external API
+
+Category-based filtering
+
+Search by product name
+
+Product detail view
+
+Loading and error state handling
+
+Client-side routing and navigation
+
+Project Structure
+src/
+├── components/   Reusable UI components
+├── pages/        Main application views
+
+Setup & Run
 npm install
 npm run dev
+
+Purpose
+
+This project demonstrates:
+
+API consumption and data handling
+
+State management in React
+
+Component-based architecture
+
+Clean code practices and tooling
