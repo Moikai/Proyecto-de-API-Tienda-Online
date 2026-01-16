@@ -50,3 +50,6 @@ State management in React
 Component-based architecture
 
 Clean code practices and tooling
+
+![Product List Desktop](./public/screenshots/product-list-light-desktop.png)
+![Product Detail Mobile](./public/screenshots/product-detail-dark-mobile.png)
